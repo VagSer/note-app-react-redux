@@ -4,6 +4,7 @@
     max-width: 800px;
     margin: 10px auto;
     padding: 10px;
+    height: auto;
 }
 
 .NoteItem header {
@@ -19,6 +20,8 @@
 }
 
 .NoteItem__Body{
+    width: 99%;
+    height: auto;
     resize: none;
 }
 

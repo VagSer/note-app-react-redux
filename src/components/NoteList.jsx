@@ -1,10 +1,12 @@
+import {useSelector} from 'react-redux';
 import NoteItem from "./NoteItem";
 
 export default function NoteList(props) {
+    const allNotes = useSelector(state => state.allNotes)
+
     return(
         <div>
-            <h3>{props.title}</h3>
-            {props.notes.map(note => <NoteItem key={note.id} note={note}/>)}
+            {allNotes.map(note => <NoteItem key={note.id} note={note}/>)}
         </div>
     )
 }

@@ -69,6 +69,7 @@ export default function NoteItem(props) {
             <hr/>
             <textarea
                 className='NoteItem__Body'
+                rows={6}
                 disabled={!editable}
                 value={edit.body}
                 onChange={(e) => setEdit({...edit, body: e.target.value})}
