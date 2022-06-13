@@ -12,6 +12,7 @@ export default function Header() {
 
     const dispatch = useDispatch()
 
+
     const addNote = () => {
         if (newNote.title && newNote.body) {
           setVisible(!visible) 
@@ -23,7 +24,7 @@ export default function Header() {
     return(
         <header className='Header'>
         <ModalWindow visible={visible} setVisible={setVisible}>
-          <form className='NewNote'>
+          <div className='NewNote'>
             <input
               type="text"
               required
@@ -52,7 +53,7 @@ export default function Header() {
                   Отменить
                 </button>
             </div>
-          </form>
+          </div>
         </ModalWindow>
         <h3>Приложение для заметок</h3>
         <button

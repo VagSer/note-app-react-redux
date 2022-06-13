@@ -10,6 +10,7 @@
     background: none;
     font-size: 1rem;
     transition: 0.3s;
+    padding: 5px;
 }
 
 .DeleteButton:hover {
@@ -23,6 +24,7 @@
     background: none;
     font-size: 1rem;
     transition: 0.3s;
+    padding: 5px;
 }
 
 .EditButton:hover {
@@ -35,6 +37,7 @@
     color: var(--color-submit);
     background: none;
     font-size: 1rem;
+    padding: 5px;
     transition: 0.3s;
 }
 

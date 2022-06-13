@@ -8,9 +8,9 @@ export default function ModalWindow({children, visible, setVisible}) {
 
     return(
         <div className={rootClasses.join(' ')}>
-            <form className='ModalWindowContent'>
+            <div className='ModalWindowContent'>
                 {children}
-            </form>
+            </div>
         </div>
     )
 }
