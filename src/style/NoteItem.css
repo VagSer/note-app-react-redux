@@ -1,0 +1,28 @@
+.NoteItem {
+    border: 1px solid black;
+    width: 90%;
+    max-width: 800px;
+    margin: 10px auto;
+    padding: 10px;
+}
+
+.NoteItem header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.NoteItem__Title:disabled {
+    background: none;
+    border: none;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.NoteItem__Body{
+    resize: none;
+}
+
+.NoteItem__Body:disabled {
+    background: none;
+    border: none;
+}
