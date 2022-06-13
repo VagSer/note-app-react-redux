@@ -8,7 +8,7 @@ export default function Header() {
     const [newNote, setNewNote] = useState(
         {id: Date.now(), title: '', body: ''}
       )
-    const [visible, setVisible] = useState(true)
+    const [visible, setVisible] = useState(false)
 
     const dispatch = useDispatch()
 
@@ -22,34 +22,37 @@ export default function Header() {
 
     return(
         <header className='Header'>
-        <ModalWindow visible={!visible} setVisible={setVisible}>
-          <input
-            type="text"
-            required
-            value={newNote.title}
-            onChange={(e) => setNewNote({...newNote, title: e.target.value})}
-            placeholder='Название заметки'
-          />
-          <textarea
-            type="text"
-            required
-            value={newNote.body}
-            onChange={(e) => setNewNote({...newNote, body: e.target.value})}
-            placeholder='Текст заметки'
-            style={{resize: 'none'}}
-          />
-          <div>
-            <button 
-            className='SubmitButton'
-            onClick={addNote}>
-              Добавить
-            </button>
-            <button 
-            className='DeleteButton'
-            onClick={() => setVisible(!visible)}>
-              Отменить
-            </button>
-          </div>
+        <ModalWindow visible={visible} setVisible={setVisible}>
+          <form className='NewNote'>
+            <input
+              type="text"
+              required
+              value={newNote.title}
+              onChange={(e) => setNewNote({...newNote, title: e.target.value})}
+              placeholder='Название заметки'
+            />
+            <textarea
+              type="text"
+              required
+              value={newNote.body}
+              onChange={(e) => setNewNote({...newNote, body: e.target.value})}
+              placeholder='Текст заметки'
+              style={{resize: 'none'}}
+            />
+            <div>
+              <button 
+                type='submit'
+                className='SubmitButton'
+                onClick={addNote}>
+                  Добавить
+                </button>
+                <button 
+                className='DeleteButton'
+                onClick={() => setVisible(!visible)}>
+                  Отменить
+                </button>
+            </div>
+          </form>
         </ModalWindow>
         <h3>Приложение для заметок</h3>
         <button

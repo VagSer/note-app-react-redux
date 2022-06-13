@@ -5,3 +5,8 @@
     display: flex;
     justify-content: space-around;
 }
+
+.NewNote {
+    display: flex;
+    flex-direction: column;
+}
