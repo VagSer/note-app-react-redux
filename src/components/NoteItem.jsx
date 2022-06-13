@@ -1,6 +1,7 @@
 import {useDispatch} from 'react-redux';
 import {useState} from 'react';
 import '../style/NoteItem.css'
+import '../style/buttons.css'
 
 export default function NoteItem(props) {
     const dispatch = useDispatch()
@@ -41,11 +42,13 @@ export default function NoteItem(props) {
                     style={editable ? {display: 'none'} : {display: 'inline'}}
                 >
                     <button
+                    className='EditButton'
                     onClick={editNote}
                     >
                         Редактировать
                     </button>
                     <button
+                    className='DeleteButton'
                     onClick={removeNote}
                     >
                         Удалить
@@ -55,11 +58,13 @@ export default function NoteItem(props) {
                     style={!editable ? {display: 'none'} : {display: 'inline'}}
                 >
                     <button
+                    className='SubmitButton'
                     onClick={acceptEdits}
                     >
                         Принять
                     </button>
                     <button
+                    className='DeleteButton'
                     onClick={cancelEdits}
                     >
                         Отменить
@@ -68,8 +73,8 @@ export default function NoteItem(props) {
             </header>
             <hr/>
             <textarea
+                required
                 className='NoteItem__Body'
-                rows={6}
                 disabled={!editable}
                 value={edit.body}
                 onChange={(e) => setEdit({...edit, body: e.target.value})}

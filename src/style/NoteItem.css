@@ -21,8 +21,10 @@
 
 .NoteItem__Body{
     width: 99%;
-    height: auto;
+    overflow: visible;
+    height: 200px;
     resize: none;
+    font: 1rem sans-serif;
 }
 
 .NoteItem__Body:disabled {

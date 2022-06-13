@@ -1,0 +1,44 @@
+:root {
+    --color-danger: darkred;
+    --color-primary: #235ad1;
+    --color-submit: #02662c;
+}
+
+.DeleteButton {
+    border: 1px solid var(--color-danger);
+    color: var(--color-danger);
+    background: none;
+    font-size: 1rem;
+    transition: 0.3s;
+}
+
+.DeleteButton:hover {
+    background: var(--color-danger);
+    color: white;
+}
+
+.EditButton {
+    border: 1px solid var(--color-primary);
+    color: var(--color-primary);
+    background: none;
+    font-size: 1rem;
+    transition: 0.3s;
+}
+
+.EditButton:hover {
+    background: var(--color-primary);
+    color: white;
+}
+
+.SubmitButton {
+    border: 1px solid var(--color-submit);
+    color: var(--color-submit);
+    background: none;
+    font-size: 1rem;
+    transition: 0.3s;
+}
+
+.SubmitButton:hover {
+    background: var(--color-submit);
+    color: white;
+}
