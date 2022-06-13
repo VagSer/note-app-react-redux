@@ -12,8 +12,9 @@ export default function Header() {
 
     const dispatch = useDispatch()
 
-    const addNote = () => {
+    const addNote = (e) => {
         if (newNote.title && newNote.body) {
+          e.preventDefault()
           setVisible(!visible) 
           dispatch({type: 'ADD_NOTE', payload: newNote})
           setNewNote({id: Date.now(), title: '', body: ''})
@@ -23,7 +24,7 @@ export default function Header() {
     return(
         <header className='Header'>
         <ModalWindow visible={visible} setVisible={setVisible}>
-          <div className='NewNote'>
+          <form name="newNote" className='NewNote' onSubmit={addNote}>
             <input
               type="text"
               required
@@ -42,8 +43,7 @@ export default function Header() {
             <div>
               <button 
                 type='submit'
-                className='SubmitButton'
-                onClick={addNote}>
+                className='SubmitButton'>
                   Добавить
                 </button>
                 <button 
@@ -52,7 +52,7 @@ export default function Header() {
                   Отменить
                 </button>
             </div>
-          </div>
+          </form>
         </ModalWindow>
         <h2>Note App by VagSer</h2>
         <button
