@@ -16,6 +16,9 @@ const reducer = (state = defaultState, action) => {
       return {...state, allNotes: [...state.allNotes, action.payload]}
     case "REMOVE_NOTE":
       return {...state, allNotes: state.allNotes.filter(note => note.id !== action.payload)}
+    case "EDIT_NOTE": {
+      return {...state, allNotes: [...state.allNotes.map(note => (note.id === action.payload.id)? action.payload : note)]}
+    }
     default:
       return state
   }

@@ -18,6 +18,11 @@ export default function NoteItem(props) {
         setEditable(!editable)
     }
 
+    const acceptEdits = () => {
+        setEditable(!editable)
+        dispatch({type: 'EDIT_NOTE', payload: edit})
+    }
+
     const cancelEdits = () => {
         setEditable(!editable)
         setEdit({...props.note})
@@ -50,6 +55,7 @@ export default function NoteItem(props) {
                     style={!editable ? {display: 'none'} : {display: 'inline'}}
                 >
                     <button
+                    onClick={acceptEdits}
                     >
                         Принять
                     </button>
@@ -65,6 +71,7 @@ export default function NoteItem(props) {
                 className='NoteItem__Body'
                 disabled={!editable}
                 value={edit.body}
+                onChange={(e) => setEdit({...edit, body: e.target.value})}
             />
         </div>
     )
