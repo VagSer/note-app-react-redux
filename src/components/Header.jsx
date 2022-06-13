@@ -12,7 +12,6 @@ export default function Header() {
 
     const dispatch = useDispatch()
 
-
     const addNote = () => {
         if (newNote.title && newNote.body) {
           setVisible(!visible) 
@@ -55,7 +54,7 @@ export default function Header() {
             </div>
           </div>
         </ModalWindow>
-        <h3>Приложение для заметок</h3>
+        <h2>Note App by VagSer</h2>
         <button
           className='SubmitButton'
           onClick={() => setVisible(!visible)}

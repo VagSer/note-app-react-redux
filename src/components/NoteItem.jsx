@@ -32,12 +32,15 @@ export default function NoteItem(props) {
     return(
         <div className='NoteItem'>
             <header>
+                {editable? 
                 <input
                     className='NoteItem__Title'
-                    disabled={!editable}
                     value={edit.title}
                     onChange={(e) => setEdit({...edit, title: e.target.value})}
                 />
+                :  
+                <h3 style={{display: 'inline', margin: '0'}}>{props.note.title}</h3>
+                }
                 <div
                     style={editable ? {display: 'none'} : {display: 'inline'}}
                 >
@@ -72,13 +75,18 @@ export default function NoteItem(props) {
                 </div>
             </header>
             <hr/>
-            <textarea
+            {editable? 
+                <textarea
                 required
                 className='NoteItem__Body'
                 disabled={!editable}
                 value={edit.body}
                 onChange={(e) => setEdit({...edit, body: e.target.value})}
-            />
+                />
+                :  
+                <p>{props.note.body}</p>
+                }
+            
         </div>
     )
 }
