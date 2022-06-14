@@ -47,8 +47,12 @@ export default function Header() {
                   Добавить
                 </button>
                 <button 
+                type="reset"
                 className='DeleteButton'
-                onClick={() => setVisible(!visible)}>
+                onClick={() => {
+                  setNewNote({...setNewNote, title: '', body: ''})
+                  setVisible(!visible)
+                }}>
                   Отменить
                 </button>
             </div>

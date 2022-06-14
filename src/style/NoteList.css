@@ -1,0 +1,17 @@
+.NoteItem-enter {
+    opacity: 0;
+}
+
+.NoteItem-enter-active {
+    opacity: 1;
+    transition: opacity 400ms ease-in;
+}
+  
+.NoteItem-exit {
+    opacity: 1;
+}
+  
+.NoteItem-exit-active {
+    opacity: 0;
+    transition: opacity 400ms ease-in;
+}
